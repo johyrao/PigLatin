@@ -14,9 +14,9 @@ public int findFirstVowel(String sWord)
 //precondition: sWord is a valid String of length greater than 0.
 //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
 {
-  for(int i = 0; i < word.length(); i++)
+  for(int i = 0; i < sWord.length(); i++)
   {
-    String johnny=word.substring(i,i+1);
+    String johnny = new String(sWord.substring(i,i+1));
     if(johnny.equals("a")||johnny.equals("e")||johnny.equals("i")||johnny.equals("o")||johnny.equals("u"))
     {
       return i;
@@ -32,12 +32,23 @@ public String pigLatin(String sWord)
 	{
 		return sWord + "ay";
 	}
-	else if(sWord.substring(0,1).equals("a")||johnny.equals("e")||johnny.equals("i")||johnny.equals("o")||johnny.equals("u"))
+	else if(sWord.substring(0,1).equals("a")||sWord.substring(0,1).equals("e")||sWord.substring(0,1).equals("i")||sWord.substring(0,1).equals("o")||sWord.substring(0,1).equals("u"))
 	{
 		return sWord + "way";
 	}
-	else 
+	else if(sWord.substring(0,2).equals("qu")) 
 	{
-		
+		return sWord.substring(2) + "qu" + "ay";
+	}
+	else
+	{
+		int a = 0;
+		for(int i = 0; i < sWord.length(); i++)
+		{
+			if(sWord.charAt(i).equals("a")||sWord.charAt(i).equals("e")||sWord.charAt(i).equals("i")||sWord.charAt(i).equals("o")||sWord.charAt(i).equals("u"))
+			{
+				a = i;
+			}
+		}
 	}
 }
