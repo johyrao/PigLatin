@@ -16,8 +16,8 @@ public int findFirstVowel(String sWord)
 {
   for(int i = 0; i < sWord.length(); i++)
   {
-    String johnny = new String(sWord.substring(i,i+1));
-    if(johnny.equals("a")||johnny.equals("e")||johnny.equals("i")||johnny.equals("o")||johnny.equals("u"))
+    String a = new String(sWord.substring(i,i+1));
+    if(a.equals("a")||a.equals("e")||a.equals("i")||a.equals("o")||a.equals("u"))
     {
       return i;
     }
@@ -42,13 +42,6 @@ public String pigLatin(String sWord)
 	}
 	else
 	{
-		int a = 0;
-		for(int i = 0; i < sWord.length(); i++)
-		{
-			if(sWord.charAt(i).equals("a")||sWord.charAt(i).equals("e")||sWord.charAt(i).equals("i")||sWord.charAt(i).equals("o")||sWord.charAt(i).equals("u"))
-			{
-				a = i;
-			}
-		}
+		return sWord.substring(findFirstVowel(sWord)) + sWord.substring(0,findFirstVowel(sWord)) + "ay";
 	}
 }
